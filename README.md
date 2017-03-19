@@ -2,7 +2,7 @@
 ### A Api Client(use net/http)
 support application/x-www-form-urlencoded, aplication/json, multipart/form-data
 
-### Usage
+### Get Start
 * Define your api client class, implement host, path, method, query, body, result methods.
 * send a request
 
