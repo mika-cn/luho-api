@@ -19,9 +19,9 @@ module Luho
       def _request
         begin
           @response = \
-          case method.to_sym
-          when :get  then _get
-          when :post then _post
+          case method.to_s.downcase
+          when 'get'  then _get
+          when 'post' then _post
           end
           result
         rescue => e
