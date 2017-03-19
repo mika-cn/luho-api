@@ -14,9 +14,9 @@ Gem::Specification.new do |s|
   s.files = [
     'lib/luho-api.rb',
     'lib/luho/api.rb',
-    'lib/luho/api/client',
-    'lib/luho/api/error',
-    'lib/luho/api/util',
+    'lib/luho/api/client.rb',
+    'lib/luho/api/error.rb',
+    'lib/luho/api/util.rb',
     'lib/luho/api/boundary.rb',
     'lib/luho/api/multipart.rb'
   ]
