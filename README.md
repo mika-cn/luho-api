@@ -4,7 +4,7 @@ support application/x-www-form-urlencoded, aplication/json, multipart/form-data
 
 ### Usage
 * Define your api client class, implement host, path, method, query, body, result methods.
-* perform a request use
+* send a request
 
 ````ruby
 
