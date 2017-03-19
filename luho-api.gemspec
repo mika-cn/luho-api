@@ -11,13 +11,16 @@ Gem::Specification.new do |s|
   s.email       = 'laoquans@gmail.com'
   s.homepage    = 'https://github.com/mika-cn/luho-api'
   s.license     = 'MIT'
-  #s.executables << 'luho'
   s.files = [
-    "lib/luho.rb",
-    "lib/luho/translator.rb",
-    "bin/luho"
+    'lib/luho-api.rb',
+    'lib/luho/api.rb',
+    'lib/luho/api/client',
+    'lib/luho/api/error',
+    'lib/luho/api/util',
+    'lib/luho/api/boundary.rb',
+    'lib/luho/api/multipart.rb'
   ]
   s.test_files = [
-    "test/test_luho.rb"
+    'test/test_api_client.rb'
   ]
 end
