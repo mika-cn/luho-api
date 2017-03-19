@@ -3,18 +3,16 @@
 support application/x-www-form-urlencoded, aplication/json, multipart/form-data
 
 ### Get Start
-* Define your api client class, implement host, path, method, query, body, result methods.
+* Define your api client class, include `Luho::Api::Client` and implement host, path, method, query, body, result methods.
 * send a request
 
-host: root url without '/' (eg: http://example.com)
-
-path: request path (eg: '/search')
-
-method: request method (:get or :post)
-
-query: query hash (eg: {q: 'hello'})
-
-body: post data hash (use in post request)
+```ruby
+#host   : root url without '/' (eg: http://example.com)
+#path   : request path   (eg: '/search')
+#method : request method (eg: 'post')
+#query  : query hash     (eg: {q: 'hello'})
+#body   : post data hash (use in post request)
+```
 
 #### example:
 ````ruby
