@@ -26,7 +26,7 @@ module Luho
        when 'multipart/form-data'
          boundary = Boundary.create
          req.content_type = "#{req.content_type}; boundary=#{boundary}"
-         req.body = Multipart.new(params: params, boundary: boundary).to_req_body
+         req.body = Multipart.new(params: body, boundary: boundary).to_req_body
        end
        req = (yield req) if block_given?
       http = get_http(uri)

@@ -23,7 +23,7 @@ module Luho
             create_regular_field(@stream, k, v)
           end
           @stream.write(EOL + b)
-          @stream.write(EOL) if last_index == idx
+          @stream.write(EOL) if last_index != idx
         end
         @stream.write('--')
         @stream.write(EOL)
