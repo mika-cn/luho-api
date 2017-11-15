@@ -7,14 +7,15 @@ module Luho
         mod.class_eval do
           attr_reader :response
         end
+        mod.extend ClassMethods
       end
 
-      def self.request(params)
-        api = new params
-        api._request
+      module ClassMethods
+        def request(params={})
+          api = new params
+          api._request
+        end
       end
-
-      private
 
       def _request
         begin
@@ -24,7 +25,7 @@ module Luho
           when 'post' then _post
           end
           result
-        rescue => e
+        rescue Net::OpenTimeout, Net::ReadTimeout => e
           msg = <<-HINT
             url:   #{host + path}
             method: #{method}
@@ -36,6 +37,8 @@ module Luho
           raise Luho::Api::Error.new(self, msg)
         end
       end
+
+      private
 
       def _get
         Luho::Api::Util.get({
@@ -53,6 +56,8 @@ module Luho
           body: body
         }, &sign_request)
       end
+
+      protected
 
       def _get_headers
         {'Content-Type' => 'application/json'}
